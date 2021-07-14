@@ -66,10 +66,10 @@ function toggleUI() {
 
 function mosaic() {
     let imgs = document.querySelectorAll("img");
-    if (imgs.length > 1) {
+    if (imgs.length > 0) {
         $('#myMosaic').Mosaic();
     }
-    else if (imgs.length === 1) {
-        imgs[0].style.width = "100%";
+    else {
+        toggleUI();
     }
 } 
