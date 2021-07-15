@@ -14,11 +14,11 @@ const LOADSTRINGS = [
     "Öppnar tonfiskburkar..."
 ];
 
-let loading_txt_idx = randomInt(0, 10000);
-
 function randomInt(low, high) {
     return low + Math.round(Math.random() * (high - low));
 }
+
+let loading_txt_idx = randomInt(0, 10000);
 
 function fillCategories() {
     let xhr = new XMLHttpRequest();
@@ -31,7 +31,7 @@ function fillCategories() {
             opt.innerText = v.name;
             CATEGORY_SELECT.appendChild(opt);
         }
-    }
+    };
     xhr.send();
 }
 
@@ -43,9 +43,9 @@ function getCatUrl(cb) {
     xhr.onload = () => {
         if (xhr.status >= 200 && xhr.status < 300) {
             const data = xhr.response[0];
-            cb(data.url)
+            cb(data.url);
         }
-    }
+    };
     xhr.send();
 }
 
@@ -96,7 +96,7 @@ function removeImg(img) {
 }
 
 function addCat() {
-    createCatImage().then(value => IMG_CONTAINER.appendChild(value))
+    createCatImage().then(value => IMG_CONTAINER.appendChild(value));
 }
 
 function addCats(num) {
@@ -105,7 +105,7 @@ function addCats(num) {
     let category = $("categories :selected").value;
 
     let reqs = [];
-    for (let i=0; i<num; i++) {
+    for (let i=0; i<num; i+=1) {
         reqs.push(createCatImage(category));
     }
 
@@ -113,14 +113,15 @@ function addCats(num) {
         SPINNER.classList.add("invisible");
         updateMosaic();
 
-        for (let i of imgs) {    
-            setTimeout(() => i.classList.remove("preload"), randomInt(100, 3000));
+        for (let img of imgs) {
+            const img2 = img;
+            setTimeout(() => img2.classList.remove("preload"), randomInt(100, 3000));
         }
     });
 }
 
 function hideUI() {
-    document.querySelector("body").classList.add("blank")
+    document.querySelector("body").classList.add("blank");
     UI_BOX.classList.add("hidden");
     handleLoadingText();
     SPINNER.classList.remove("hidden");
@@ -134,9 +135,8 @@ function updateMosaic() {
 }
 
 function handleLoadingText() {
-    loading_txt_idx = loading_txt_idx % LOADSTRINGS.length;
-    console.log(loading_txt_idx);
-    LOADING_TXT.innerText = LOADSTRINGS[loading_txt_idx++];
+    loading_txt_idx = (loading_txt_idx + 1) % LOADSTRINGS.length;
+    LOADING_TXT.innerText = LOADSTRINGS[loading_txt_idx];
     if (!SPINNER.classList.contains("invisible")) {
         setTimeout(() => handleLoadingText(), 2500);
     }
