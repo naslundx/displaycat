@@ -3,18 +3,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Katter, katter, katter</title>
     <link rel="stylesheet" href="style.css"></head>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     
     <link rel="stylesheet" type="text/css" href="jquery.mosaic.css" />
 <body>
-    <div id="ui">
+    <div id="ui" class="dialog">
         <h1>Katter!</h1>
         <button onclick="addCats(12)">Fyll sidan med katter</button>
+        <br>
+        Kategori: 
+        <select id="categories">
+            <option value="0">any</option>
+        </select>
     </div>
 
+    <div id="loading" class="dialog hidden transition">
+        <h3>Laddar...</h3>
+        <div class="loader center"></div>
+        <p></p>
+    </div>
     <div id="myMosaic">
 
     </div>
