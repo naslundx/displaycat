@@ -8,11 +8,14 @@ const SPINNER = document.querySelector("#loading");
 const LOADING_TXT = document.querySelector("#loading p");
 
 const LOADSTRINGS = [
-    "Försöker härma jamande...",
+    "Försöker jama...",
     "Puttar ner vaser från bord...",
     "Pekar med laserpekaren...",
     "Tar bort hundar...",
-    "Öppnar tonfiskburkar..."
+    "Öppnar tonfiskburkar...",
+    "Lapar grädde...",
+    "Säger kss kss kss...",
+    "Gnider kinder mot möbler..."
 ];
 
 function randomInt(low, high) {
@@ -71,10 +74,7 @@ function createCatImage(category) {
                 IMG_CONTAINER.appendChild(div);
                 updateMosaic();
             } else {
-                reject({
-                    status: xhr.status,
-                    statusText: xhr.statusText
-                });
+                xhr.onerror();
             }
         };
         xhr.onerror = () => {

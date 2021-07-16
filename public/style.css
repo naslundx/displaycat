@@ -17,18 +17,14 @@ body {
     background: none;
 }
 
-img {
-    width: 25%;
-}
-
 .hidden {
-    display:none;
+    display: none;
 }
 
 .dialog {
     padding: 15px;
-    width: 35%;
-    min-width: 250px;
+    width: 50%;
+    min-width: 300px;
     border: 1px solid black;
     border-radius: 5px;
     text-align: center;
@@ -36,8 +32,13 @@ img {
     background-color: rgba(255, 255, 255, 0.7);
 }
 
+.dialog h1 {
+    font-size: xx-large;
+}
+
 #ui {
     margin: 100px auto;
+    font-size: x-large;
 }
 
 #ui button {
@@ -48,9 +49,14 @@ img {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: x-large;
     margin: 15px auto;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+#ui select {
+    font-size: x-large;
 }
 
 #ui button:hover {
@@ -84,6 +90,10 @@ img {
     top: 100px;
     left: 50%;
     transform: translateX(-50%);
+}
+
+#loading p {
+    margin-top: 10px;
 }
 
 .invisible {
