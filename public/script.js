@@ -3,6 +3,7 @@ const API_KEY = "d378884b-cb7d-42bc-95c0-bd8202d3386e";
 const IMG_CONTAINER = document.querySelector("#myMosaic");
 const CATEGORY_SELECT = document.querySelector("#categories");
 const UI_BOX = document.querySelector("#ui");
+const FOOTER = document.querySelector("footer");
 const SPINNER = document.querySelector("#loading");
 const LOADING_TXT = document.querySelector("#loading p");
 
@@ -113,13 +114,15 @@ function addCats(num) {
 
         SPINNER.classList.add("invisible");
         setTimeout(() => SPINNER.classList.add("hidden"), 1600);
+        FOOTER.classList.add("invisible");
+        setTimeout(() => FOOTER.classList.add("hidden"), 1600);
     });
 }
 
 function hideUI() {
     document.querySelector("body").classList.add("blank");
-    UI_BOX.classList.add("hidden");
     handleLoadingText();
+    UI_BOX.classList.add("hidden");
     SPINNER.classList.remove("hidden");
 }
 
