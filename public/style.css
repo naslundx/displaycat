@@ -11,7 +11,6 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    overflow: hidden;
 }
 
 .blank {
@@ -28,16 +27,17 @@ img {
 
 .dialog {
     padding: 15px;
-    width: 25%;
+    width: 35%;
+    min-width: 250px;
     border: 1px solid black;
     border-radius: 5px;
     text-align: center;
     z-index: 99;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 #ui {
     margin: 100px auto;
-    background-color: rgba(255, 255, 255, 0.7);
 }
 
 #ui button {
@@ -49,7 +49,7 @@ img {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 10px auto;
+    margin: 15px auto;
     border-radius: 5px;
 }
 
@@ -57,16 +57,14 @@ img {
     background-color: #6CDF90;
 }
 
-#myMosaic {
-    overflow: hidden;
-}
-
 #myMosaic img.preload {
     opacity: 0.1;
 }
 
-#myMosaic img {
+#myMosaic div img {
     opacity: 1.0;
+    width: 100%;
+    height: 100%;
 }
 
 #myMosaic img:hover {
@@ -80,15 +78,12 @@ img {
 }
 
 #loading {
-    background-color: black;
-    color: white;
+    color: black;
     text-align: center;
-    width: 25%;
     position: absolute;
     top: 100px;
     left: 50%;
     transform: translateX(-50%);
-    opacity: 0.9;
 }
 
 .invisible {

@@ -18,6 +18,12 @@ function randomInt(low, high) {
     return low + Math.round(Math.random() * (high - low));
 }
 
+function randomColor() {
+    return "hsl(" + 360 * Math.random() + ',' +
+             (25 + 70 * Math.random()) + '%,' + 
+             (85 + 10 * Math.random()) + '%)';
+}
+
 let loading_txt_idx = randomInt(0, 10000);
 
 function getCatUrl(cb) {
@@ -49,16 +55,20 @@ function createCatImage(category) {
         xhr.onload = () => {
             if (xhr.status >= 200 && xhr.status < 300) {
                 const data = xhr.response[0];
+                const div = document.createElement("div");
+                div.width = data.width;
+                div.height = data.height;
+                div.style.backgroundColor = randomColor();
                 const img = new Image();
                 img.onload = () => resolve(img);
                 img.onerror = reject;
-                img.onclick = () => removeImg(img);
-                img.width = data.width;
-                img.height = data.height;
+                img.onclick = () => removeImg(div);
                 img.src = data.url;
                 img.classList.add("preload");
                 img.classList.add("transition");
-                IMG_CONTAINER.appendChild(img);
+                div.appendChild(img);
+                IMG_CONTAINER.appendChild(div);
+                updateMosaic();
             } else {
                 reject({
                     status: xhr.status,
@@ -96,13 +106,13 @@ function addCats(num) {
     }
 
     Promise.all(reqs).then(imgs => {
-        SPINNER.classList.add("invisible");
-        updateMosaic();
-
         for (let img of imgs) {
             const img2 = img;
             setTimeout(() => img2.classList.remove("preload"), randomInt(100, 3000));
         }
+
+        SPINNER.classList.add("invisible");
+        setTimeout(() => SPINNER.classList.add("hidden"), 1600);
     });
 }
 
