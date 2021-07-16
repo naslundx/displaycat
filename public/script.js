@@ -20,21 +20,6 @@ function randomInt(low, high) {
 
 let loading_txt_idx = randomInt(0, 10000);
 
-function fillCategories() {
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://api.thecatapi.com/v1/categories");
-    xhr.responseType = "json";
-    xhr.onload = () => {
-        for (let v of xhr.response) {
-            let opt = document.createElement("option");
-            opt.value = v.id;
-            opt.innerText = v.name;
-            CATEGORY_SELECT.appendChild(opt);
-        }
-    };
-    xhr.send();
-}
-
 function getCatUrl(cb) {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", API_ADDR);
@@ -50,17 +35,14 @@ function getCatUrl(cb) {
 }
 
 function createCatImage(category) {
-    console.log(category);
     let category_string = "";
     if (category > 0) {
         category_string = "?category_ids=" + category;
     }
-    console.log(category_string);
 
     return new Promise((resolve, reject) => {
         let xhr = new XMLHttpRequest();
         let url = API_ADDR + category_string;
-        console.log(url);
         xhr.open("GET", url);
         xhr.setRequestHeader("x-api-key", API_KEY);
         xhr.responseType = "json";
@@ -145,13 +127,3 @@ function handleLoadingText() {
         setTimeout(() => handleLoadingText(), 2500);
     }
 }
-
-// -------------
-
-fillCategories();
-
-// let body = document.querySelector("body");
-// getCatUrl(url => {
-//     console.log("done " + url);
-//     body.style.background = "url(" + url + ")"
-// });

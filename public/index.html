@@ -8,7 +8,16 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="jquery.mosaic.css" />
+    <link rel="stylesheet" type="text/css" href="jquery.mosaic.min.css" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CX41WB7HP1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CX41WB7HP1');
+    </script>
 <body>
     <div id="ui" class="dialog">
         <h1>Katter!</h1>
@@ -16,7 +25,14 @@
         <br>
         Kategori: 
         <select id="categories">
-            <option value="0">any</option>
+            <option value="0" selected>Alla</option>
+            <option value="14">Diskho</option>
+            <option value="1">Hattar</option>
+            <option value="15">Kläder</option>
+            <option value="5">Lådor</option>
+            <option value="2">Rymden</option>
+            <option value="7">Slipsar</option>
+            <option value="4">Solglasögon</option>
         </select>
     </div>
 
@@ -28,7 +44,7 @@
     <div id="myMosaic">
 
     </div>
-    <script type="text/javascript" src="jquery.mosaic.js"></script>
+    <script type="text/javascript" src="jquery.mosaic.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
