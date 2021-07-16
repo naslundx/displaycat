@@ -1,4 +1,4 @@
-const API_ADDR = "https://api.thecatapi.com/v1/images/search?category_ids=1";
+const API_ADDR = "https://api.thecatapi.com/v1/images/search";
 const API_KEY = "d378884b-cb7d-42bc-95c0-bd8202d3386e";
 const IMG_CONTAINER = document.querySelector("#myMosaic");
 const CATEGORY_SELECT = document.querySelector("#categories");
@@ -49,15 +49,19 @@ function getCatUrl(cb) {
     xhr.send();
 }
 
-function createCatImage(category = 0) {
+function createCatImage(category) {
+    console.log(category);
     let category_string = "";
     if (category > 0) {
         category_string = "?category_ids=" + category;
     }
+    console.log(category_string);
 
     return new Promise((resolve, reject) => {
         let xhr = new XMLHttpRequest();
-        xhr.open("GET", API_ADDR + category_string);
+        let url = API_ADDR + category_string;
+        console.log(url);
+        xhr.open("GET", url);
         xhr.setRequestHeader("x-api-key", API_KEY);
         xhr.responseType = "json";
         xhr.onload = () => {
@@ -95,14 +99,14 @@ function removeImg(img) {
     updateMosaic();
 }
 
-function addCat() {
-    createCatImage().then(value => IMG_CONTAINER.appendChild(value));
+function addCat(category) {
+    createCatImage(category).then(value => IMG_CONTAINER.appendChild(value));
 }
 
 function addCats(num) {
     hideUI();
 
-    let category = $("categories :selected").value;
+    let category = $("#categories :selected")[0].value;
 
     let reqs = [];
     for (let i=0; i<num; i+=1) {

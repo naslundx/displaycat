@@ -32,11 +32,11 @@ img {
     border: 1px solid black;
     border-radius: 5px;
     text-align: center;
+    z-index: 99;
 }
 
 #ui {
     margin: 100px auto;
-    z-index: 99;
     background-color: rgba(255, 255, 255, 0.7);
 }
 
