@@ -7,9 +7,6 @@
 
 body {
     background: url(https://cdn2.thecatapi.com/images/38i.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
 }
 
@@ -50,7 +47,7 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: x-large;
-    margin: 15px auto;
+    margin: 25px auto;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -79,8 +76,6 @@ body {
 
 .transition {
     transition: opacity 1.5s ease-in-out;
-    -moz-transition: opacity 1.5s ease-in-out;
-    -webkit-transition: opacity 1.5s;   
 }
 
 #loading {
