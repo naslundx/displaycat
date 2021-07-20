@@ -1,16 +1,6 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="se">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katter, katter, katter</title>
-    <link rel="stylesheet" href="style.css"></head>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="jquery.mosaic.min.css" />
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CX41WB7HP1"></script>
     <script>
@@ -19,10 +9,24 @@
         gtag('js', new Date());
         gtag('config', 'G-CX41WB7HP1');
     </script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="För varje gång du behöver se mer katter.">
+    <meta name="author" content="Marcus Näslund">
+    <title>Katter, katter, katter</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="jquery.mosaic.min.css" />
+</head>
 <body>
     <div id="ui" class="dialog">
         <h1>Katter!</h1>
-        <button onclick="addCats(16)">Fyll sidan med katter</button>
+        <button onclick="addCats(20)">Fyll sidan med katter</button>
         <br>
         <span>Kategori:</span> 
         <select id="categories">
@@ -50,6 +54,9 @@
                 Av Marcus Näslund, officiell kattälskare. 
                 <i class="fa fa-address-card-o"></i>
             </a>
+        </p>
+        <p>
+            Använder <a href="https://thecatapi.com/">The Cat API</a>
         </p>
     </footer>
     <script type="text/javascript" src="jquery.mosaic.min.js"></script>

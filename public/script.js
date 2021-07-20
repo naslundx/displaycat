@@ -1,5 +1,5 @@
 const API_ADDR = "https://api.thecatapi.com/v1/images/search";
-const API_KEY = "d378884b-cb7d-42bc-95c0-bd8202d3386e";
+const API_KEY = "d378884b-cb7d-42bc-95c0-bd8202d3386e";  // Yes this shouldn't be here but what are you going to do with it? It's free. Thanks.
 const IMG_CONTAINER = document.querySelector("#myMosaic");
 const CATEGORY_SELECT = document.querySelector("#categories");
 const UI_BOX = document.querySelector("#ui");
@@ -66,7 +66,7 @@ function createCatImage(category) {
                 const img = new Image();
                 img.onload = () => resolve(img);
                 img.onerror = reject;
-                img.onclick = () => removeImg(div);
+                img.onclick = () => replaceImg(div);
                 img.src = data.url;
                 img.classList.add("preload");
                 img.classList.add("transition");
@@ -87,19 +87,24 @@ function createCatImage(category) {
     });
 }
 
-function removeImg(img) {
-    img.remove();
-    updateMosaic();
+function getSelectedCategory() {
+    return $("#categories :selected")[0].value;
 }
 
-function addCat(category) {
-    createCatImage(category).then(value => IMG_CONTAINER.appendChild(value));
+function replaceImg(img) {
+    img.remove();
+    updateMosaic();
+
+    let category = getSelectedCategory();
+    createCatImage(category).then((img) => {
+        img.classList.remove("preload");
+    });
 }
 
 function addCats(num) {
     hideUI();
 
-    let category = $("#categories :selected")[0].value;
+    let category = getSelectedCategory();
 
     let reqs = [];
     for (let i=0; i<num; i+=1) {
