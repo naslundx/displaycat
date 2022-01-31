@@ -6,8 +6,10 @@
 }
 
 body {
-    background: url(https://cdn2.thecatapi.com/images/38i.jpg) no-repeat center center fixed;
-    background-size: cover;
+    background-image: url(https://cdn2.thecatapi.com/images/tcWReMaFB.jpg);
+    background-size: cover;                     
+    background-repeat: no-repeat;
+    background-position: top center;
 }
 
 .blank {
