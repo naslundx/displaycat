@@ -24,10 +24,10 @@ function App() {
   useEffect(
     () => {
       if (step === 2) {
-        setTimeout(() => { console.log("stepping"); nextStep()}, 2500);
+        setTimeout(() => { nextStep()}, 2500);
       }
     },
-    [step]
+    [step, nextStep]
   );
 
   return (

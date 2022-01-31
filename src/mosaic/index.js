@@ -14,11 +14,13 @@ const Mosaic = ({ rendering, imgCategory, nextStep }) => {
         if (loaded === PHOTO_COUNT) {
             nextStep();
         }
-    }, [loaded])
+    }, [loaded, nextStep])
 
     const onload = () => {
         increment();
+        /* eslint-disable */
         eval('$("#myMosaic").Mosaic()');  // Forgive me, Lord
+        /* eslint-enable */
     };
 
     return (
