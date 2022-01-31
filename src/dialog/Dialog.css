@@ -85,3 +85,28 @@
         transform: rotate(360deg);
     }
 }
+
+@media screen and (max-width: 1024px){
+    .dialog {
+        min-width: 512px;
+    }
+    .dialog h1 {
+        font-size: 4rem;
+    }
+    #ui button {
+        font-size: 2.5rem;
+    }
+    #ui span, #ui select {
+        font-size: 2rem;
+    }
+    #loading h3 {
+        font-size: 3rem;
+    }
+    #loading p {
+        font-size: 2.5rem;
+    }
+    .loader {
+        width: 90px;
+        height: 90px;
+    }
+}
