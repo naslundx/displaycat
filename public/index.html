@@ -1,67 +1,28 @@
 <!DOCTYPE html>
-<html lang="se">
-<head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CX41WB7HP1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-CX41WB7HP1');
-    </script>
+<html lang="sv">
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
     <meta name="description" content="För varje gång du behöver se mer katter.">
     <meta name="author" content="Marcus Näslund">
-    <title>Katter, katter, katter</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/jquery.mosaic.min.css" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="jquery.mosaic.min.css" />
+    <script src="%PUBLIC_URL%/jquery.mosaic.min.js"></script>
+
+    <title>Katter, katter, katter</title>
 </head>
+
 <body>
-    <div id="ui" class="dialog">
-        <h1>Katter!</h1>
-        <button onclick="addCats(20)">Fyll sidan med katter</button>
-        <br>
-        <span>Kategori:</span> 
-        <select id="categories">
-            <option value="0" selected>Alla</option>
-            <option value="14">Diskho</option>
-            <option value="1">Hattar</option>
-            <option value="15">Kläder</option>
-            <option value="5">Lådor</option>
-            <option value="2">Rymden</option>
-            <option value="7">Slipsar</option>
-            <option value="4">Solglasögon</option>
-        </select>
-    </div>
-
-    <div id="loading" class="dialog hidden transition">
-        <div class="loader center"></div>
-        <p></p>
-    </div>
-    <div id="myMosaic">
-
-    </div>
-    <footer class="transition">
-        <p>
-            <a href="https://www.linkedin.com/in/naslundx/">
-                Av Marcus Näslund, officiell kattälskare. 
-                <i class="fa fa-address-card-o"></i>
-            </a>
-        </p>
-        <p>
-            <a href="https://thecatapi.com/">
-                Använder The Cat API
-            </a>
-        </p>
-    </footer>
-    <script src="jquery.mosaic.min.js"></script>
-    <script src="script.js"></script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
 </body>
+
 </html>

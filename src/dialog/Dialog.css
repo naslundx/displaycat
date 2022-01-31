@@ -1,0 +1,87 @@
+.dialog {
+    padding: 15px;
+    width: 50%;
+    min-width: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 99;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.dialog h1 {
+    font-size: xx-large;
+}
+
+#ui {
+    margin: 100px auto;
+    font-size: x-large;
+}
+
+#ui button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 11px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: x-large;
+    margin: 25px auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#ui select {
+    font-size: x-large;
+}
+
+#ui button:hover {
+    background-color: #6CDF90;
+}
+
+#loading {
+    color: black;
+    text-align: center;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#loading p {
+    margin-top: 10px;
+}
+
+.loader {
+    margin-top: 10px;
+    border: 16px solid #333333;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+
+.invisible {
+    opacity: 0.1;
+}
+
+.hidden {
+    display: none;
+}
+
+.dialogTransition {
+    transition: opacity 2.0s linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "displaycat",
+  "version": "0.0.1",
+  "description": "A webapp that displays infinite cats",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "jshint public/script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naslundx/displaycat.git"
+  },
+  "author": "Marcus Näslund",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/naslundx/displaycat/issues"
+  },
+  "homepage": "https://github.com/naslundx/displaycat#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jshint": "^2.13.0"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}
