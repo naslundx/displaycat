@@ -5,13 +5,6 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-body {
-    background-image: url(https://cdn2.thecatapi.com/images/tcWReMaFB.jpg);
-    background-size: cover;                     
-    background-repeat: no-repeat;
-    background-position: top center;
-}
-
 .blank {
     background: none;
 }
@@ -19,7 +12,6 @@ body {
 .center {
     margin: 0 auto;
 }
-
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 
