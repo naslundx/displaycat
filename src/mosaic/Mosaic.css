@@ -2,14 +2,48 @@
     opacity: 0.1;
 }
 
-#myMosaic img {
+#myMosaic>div {
+    position: relative;
+}
+
+#myMosaic div img {
     opacity: 1.0;
+    width: 100%;
+    height: 100%;
 }
 
 #myMosaic img:not(.preload):hover {
-    opacity: 0.65;
+    opacity: 0.8;
 }
 
-.transition {
-    transition: opacity 2.5s linear;
+#myMosaic .toolbox {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    width: 100%;
+    padding: 10px;
+    opacity: 0;
+    pointer-events: none;
+    direction: rtl;
+}
+
+#myMosaic .toolbox.inside {
+    opacity: 1.0;
+}
+
+#myMosaic .toolbox i {
+    color: white;
+    font-size: larger;
+    padding-left: 10px;
+    padding-right: 10px;
+    pointer-events: all;
+}
+
+#myMosaic .toolbox i:hover {
+    color: yellow;
+    cursor: pointer;
+}
+
+.transitionFast {
+    transition: opacity 0.75s linear;
 }
