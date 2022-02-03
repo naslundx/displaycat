@@ -18,7 +18,7 @@ const usePhotos = (category = 0) => {
     }, [category]);
 
     const updatePhotos = useCallback(() => {
-        setPhotos(e => [...e, {}]);
+        setPhotos(e => e[e.length - 1] ? [...e, {}] : e.slice(0, -1));
     }, []);
 
     return [photos, updatePhotos];
