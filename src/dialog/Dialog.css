@@ -77,6 +77,10 @@
     transition: opacity 2.0s linear;
 }
 
+.clickThrough {
+    pointer-events: none;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -104,6 +108,31 @@
     }
     #loading p {
         font-size: 2.5rem;
+    }
+    .loader {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .dialog {
+        width: 90%;
+    }
+    .dialog h1 {
+        font-size: 5rem;
+    }
+    #ui button {
+        font-size: 3.5rem;
+    }
+    #ui span, #ui select {
+        font-size: 3rem;
+    }
+    #loading h3 {
+        font-size: 4rem;
+    }
+    #loading p {
+        font-size: 3.5rem;
     }
     .loader {
         width: 90px;

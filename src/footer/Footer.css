@@ -24,3 +24,9 @@ footer a {
 footer a:hover {
     color: royalblue;
 }
+
+@media screen and (max-width: 768px){
+    footer p {
+        font-size: xx-large;
+    }
+}

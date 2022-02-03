@@ -13,8 +13,7 @@ function getCatUrl(count, category) {
         xhr.responseType = "json";
         xhr.onload = () => {
             if (xhr.status >= 200 && xhr.status < 300) {
-                const urls = xhr.response.reduce((prev, current) => [...prev, current.url], []);
-                resolve(urls);
+                resolve(xhr.response);
             } else {
                 xhr.onerror();
             }

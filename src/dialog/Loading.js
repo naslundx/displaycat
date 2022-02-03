@@ -3,7 +3,7 @@ import useLoadstring from '../hooks/useLoadstring.js';
 const Loading = ({ step }) => {
     const loadstring = useLoadstring();
 
-    const className = "dialog dialogTransition" + ( step === 2 ? " invisible" : step === 3 ? " hidden" : "" );
+    const className = "dialog dialogTransition" + ( step === 2 ? " invisible clickThrough" : step === 3 ? " hidden" : "" );
 
     return (
         <div id="loading" className={className}>

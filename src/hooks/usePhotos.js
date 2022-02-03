@@ -1,19 +1,27 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import getCatUrl from './api.js'
 
-const PHOTO_COUNT = 20;
+const PHOTO_COUNT = 5;
 
 const usePhotos = (category = 0) => {
-    const [urls, setUrls] = useState([]);
+    const [photos, setPhotos] = useState([]);
 
     useEffect(() => {
-        setUrls([]);
+        setPhotos([]);
         getCatUrl(PHOTO_COUNT, category)
-            .then(result => setUrls(result),
-                  reason => console.log(reason));
+            .then(result => {
+                const reduced = result.map(({ breeds, id, categories, ...item }) => item);
+                const augmented = reduced.map(data => ({...data, visible: true}));
+                setPhotos(augmented);
+            })
+            .catch(reason => console.log(reason));
     }, [category]);
 
-    return urls;
+    const updatePhotos = useCallback(() => {
+        setPhotos(e => [...e, {}]);
+    }, []);
+
+    return [photos, updatePhotos];
 }
 
 export default usePhotos;
