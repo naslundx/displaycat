@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import getCatUrl from './api.js'
 
-const PHOTO_COUNT = 5;
+const PHOTO_COUNT = 20;
 
 const usePhotos = (category = 0) => {
     const [photos, setPhotos] = useState([]);
